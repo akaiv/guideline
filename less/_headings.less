@@ -1,11 +1,45 @@
+// 사이트 제목
+.site-title {
+	.font-size(20);
+	margin-top:     0;
+	margin-bottom: 50px;
+	text-align: center;
+	a { .link(@text-light); }
+}
+
 // 페이지 헤더 (보관함, 글, 페이지)
 .page-header {
-	margin-top: 10px;
+	text-align: center;
 	> h1 {
-		.font-size(28);
-		margin-bottom: 5px;
+		.font-size(16);
 		@media (min-width: @tablet) {
-			.font-size(36);
+			.font-size(18);
 		}
 	}
+}
+
+// 스테이지 제목
+.stage-title {
+	//== 홈: 상위 스테이지
+	.home .box & {
+		margin: 0;
+		text-align: center;
+	}
+	//== 홈: 하위 스테이지
+	h2& {
+		.normal;
+		margin-top:    8px;
+		margin-bottom: 8px;
+	}
+
+	//== 글
+	.single & {
+		.font-size(16);
+		text-align: right;
+	}
+}
+
+// 자료
+.data {
+	.12px;
 }

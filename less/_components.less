@@ -1,0 +1,16 @@
+// 상자
+.box {
+	//== 기본 모양
+	.border(@line);
+	background-color: @white;
+	display: block;
+
+	//== 여백
+	padding: 40px;
+	.home & { padding: 20px; }
+
+	//== ul, ol
+	ul, ol {
+		padding: 0;
+	}
+}
