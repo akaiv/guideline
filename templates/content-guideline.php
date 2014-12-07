@@ -33,23 +33,18 @@
     </div>
 
   <?php else : ?>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-
-        <div class="box">
-          <div class="entry-content">
-            <?php the_content(); ?>
-          </div>
-        </div>
-
-        <div class="entry-footer">
-          <div class="data">
-            <?php get_template_part( 'templates/loop', 'data' ); ?>
-          </div>
-        </div>
-
+    <div class="box">
+      <div class="entry-content">
+        <?php the_content(); ?>
       </div>
-    </div><!-- .row -->
+    </div>
+
+    <div class="entry-footer">
+      <div class="data">
+        <?php get_template_part( 'templates/loop', 'data' ); ?>
+      </div>
+    </div>
+
   <?php endif; ?>
 
 <?php endif; ?>

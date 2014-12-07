@@ -21,8 +21,8 @@
       <div class="box">
         <div class="stage-content">
           <?php the_content(); ?>
-          <?php akaiv_edit_post_link( true ); ?>
         </div>
+        <?php akaiv_edit_post_link( true ); ?>
       </div>
     </div>
 

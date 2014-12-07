@@ -4,7 +4,7 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
   <div class="container">
     <nav class="nav-footer">
-      <ul>
+      <ul class="list-inline">
         <li><a href="<?php echo home_url( 'about' ); ?>">소개</a></li>
       </ul>
     </nav>
