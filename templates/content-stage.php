@@ -1,6 +1,6 @@
 <?php akaiv_before_post(); ?>
 
-<?php if ( is_home() ) : ?>
+<?php if ( ! is_single() ) : ?>
 
   <h2 class="stage-title">
     <a href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-fw fa-file-text-o"></i></a>

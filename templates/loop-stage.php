@@ -1,6 +1,7 @@
 <?php
-if ( is_singular() )    $id = get_the_ID();
-if ( is_home() ) $post_type = $post->post_type;
+if ( ! is_single() ) : $post_type = $post->post_type;
+else : $id = get_the_ID();
+endif;
 
 $args = array (
   'post_parent' => $id,
