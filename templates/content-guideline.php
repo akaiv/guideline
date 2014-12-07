@@ -4,12 +4,11 @@
 
 <?php if ( ! is_singular() ) : ?>
 
-  <div class="box">
-    <h1 class="stage-title">
-      <a href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-fw fa-file-text-o"></i></a>
+  <h1 class="stage-title">
+    <a class="box" href="<?php echo esc_url(get_permalink()); ?>">
       <?php akaiv_the_title(); ?>
-    </h1>
-  </div>
+    </a>
+  </h1>
 
   <div class="stage-content">
     <?php get_template_part( 'templates/loop', 'stage' ); /* 스테이지: 하위 가이드라인 */ ?>
