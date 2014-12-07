@@ -1,8 +1,13 @@
-  <?php if ( ! is_home() && ! is_front_page() ) echo '</div><!-- .container -->'; ?>
+  </div><!-- .container -->
 </main><!-- .site-main -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
   <div class="container">
+    <nav class="nav-footer">
+      <ul>
+        <li><a href="<?php echo home_url( 'about' ); ?>">소개</a></li>
+      </ul>
+    </nav>
     <div class="site-info">
       <p class="pull-left">
         <a data-toggle="tooltip" data-placement="top" title="아카이브" href="http://akaiv.com/" target="_blank">akaiv</a>

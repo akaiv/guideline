@@ -43,4 +43,4 @@
 </header><!-- .site-header -->
 
 <main id="main" class="site-main" role="main">
-  <?php if ( ! is_home() && ! is_front_page() ) echo '<div class="container">'; ?>
+  <div class="container">
