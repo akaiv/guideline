@@ -9,7 +9,8 @@
   $guidelines = new WP_Query( $args );
 
   if ( $guidelines->have_posts() ) :
-    akaiv_page_header( '전체 프로세스' ); ?>
+    $obj = get_post_type_object( 'guideline' );
+    akaiv_page_header( $obj->labels->name ); ?>
 
     <div class="row"><?php
       $i = 0;
