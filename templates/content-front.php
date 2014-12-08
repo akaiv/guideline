@@ -15,7 +15,7 @@
     <div class="row"><?php
       $i = 0;
       while ( $guidelines->have_posts() ) : $guidelines->the_post(); ?>
-        <div class="col-sm-3">
+        <div class="col-md-3">
           <?php get_template_part( 'templates/content', 'guideline' ); ?>
         </div><?php
         if ( 3 === $i % 4 && count($guidelines->posts) - 1 !== $i )

@@ -15,7 +15,7 @@
 <a class="skip-link sr-only" href="#content"><?php echo 'Skip to content'; ?></a>
 
 <header id="masthead" class="site-header" role="banner">
-  <nav id="gnb" class="site-navigation gnb navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav id="gnb" class="site-navigation gnb navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnb-collapse">
@@ -26,18 +26,19 @@
         </button>
         <a id="brand" class="site-title navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
       </div>
-      <?php
-        wp_nav_menu( array(
-          'theme_location'    => 'gnb',
-          'depth'             => 2,
-          'container'         => 'div',
-          'container_id'      => 'gnb-collapse',
-          'container_class'   => 'collapse navbar-collapse navbar-right',
-          'menu_class'        => 'nav navbar-nav',
-          'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-          'walker'            => new wp_bootstrap_navwalker()
-        ) );
-      ?>
+      <div id="gnb-collapse" class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <?php
+          $args = array(
+            'post_type'   => 'guideline',
+            'post_parent' => 0,
+            'depth'       => 1,
+            'title_li'    => ''
+            );
+          wp_list_pages( $args );
+          ?>
+        </ul>
+      </div>
     </div><!-- .container -->
   </nav>
 </header><!-- .site-header -->
