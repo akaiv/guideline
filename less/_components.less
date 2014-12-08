@@ -1,3 +1,6 @@
+@box-padding: 30px;
+@box-padding-desktop: 40px;
+
 // 상자
 .box {
 	//== 기본 모양
@@ -20,7 +23,10 @@
 	//== 여백
 	margin-left:  auto;
 	margin-right: auto;
-	padding: 40px;
+	padding: @box-padding;
+	@media (min-width: @grid-float-breakpoint) {
+		padding: @box-padding-desktop;
+	}
 	.home &,
 	.archive & { padding: 20px; }
 

@@ -3,8 +3,7 @@
 <?php if ( ! is_single() ) : ?>
 
   <h2 class="stage-title">
-    <a href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-fw fa-file-text-o"></i></a>
-    <?php akaiv_the_title(); ?>
+    <a href="<?php echo esc_url(get_permalink()); ?>"><?php akaiv_the_title(); ?></a>
   </h2>
 
 <?php else : ?>
@@ -12,8 +11,7 @@
   <div class="row">
     <div class="col-md-3">
       <h1 class="stage-title">
-        <a href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-fw fa-file-text-o"></i></a>
-        <?php akaiv_the_title(); ?>
+        <a href="<?php echo esc_url(get_permalink()); ?>"><?php akaiv_the_title(); ?></a>
       </h1>
     </div>
 
