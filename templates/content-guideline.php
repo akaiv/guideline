@@ -21,7 +21,7 @@
       <?php akaiv_the_title(); ?>
     </h1>
     <div class="entry-meta text-right">
-      <?php akaiv_entry_meta( 'date', 'fa-clock-o' ); ?>
+      <?php akaiv_entry_meta( 'date' ); ?>
       <?php akaiv_edit_post_link( false, 'fa-pencil' ); ?>
     </div>
   </header>
