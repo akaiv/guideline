@@ -61,3 +61,55 @@
 		&:first-child { margin-top: 0 }
 	}
 }
+
+// 작성자 정보
+.author-info {
+	.13px;
+	color: @gray-33;
+	line-height: 20px;
+	margin-top: @box-padding-desktop;
+	margin-left: auto;
+	margin-right: auto;
+	@media (min-width: @grid-float-breakpoint) {
+		width: 50%;
+	}
+
+	//== 링크
+	a {
+		.link(@gray-33);
+		&:hover,
+		&:focus {
+			.underline;
+		}
+	}
+
+	//== 아이콘
+	.fa {
+		.opacity(.3);
+		margin-right: 2px;
+	}
+
+	//== 행간
+	p {
+		margin-bottom: 4px;
+	}
+
+	//== 제목
+	.author-title {
+		margin-top: 0;
+	}
+
+	//== 썸네일
+	.pull-left {
+		margin-right: 15px;
+	}
+
+	//== 다른 작업들
+	.list-inline {
+		margin-bottom: 0;
+		li {
+			padding-left:   0;
+			padding-right: 10px;
+		}
+	}
+}
