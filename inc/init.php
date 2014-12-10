@@ -46,3 +46,11 @@ function remove_dashboard_meta() {
   remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );   // 빠른 임시글
 }
 add_action( 'admin_init', 'remove_dashboard_meta' );
+
+/* 피드: 커스텀 포스트 타입 추가 */
+function akaiv_request($qv) {
+  if ( isset($qv['feed']) && ! isset($qv['post_type']) )
+    $qv['post_type'] = array('post', 'guideline');
+  return $qv;
+}
+add_filter('request', 'akaiv_request');
