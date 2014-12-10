@@ -1,11 +1,11 @@
 <?php
 /* 자료 URL의 호스트 이름 */
-function how_data_url_host_name( $url ) {
-  $host_name = how_get_data_url_host_name( $url );
+function data_url_host_name( $url ) {
+  $host_name = data_get_url_host_name( $url );
   if ( ! empty($host_name) )
     echo ' <span class="text-light">&#124; ' . $host_name . '</span>';
 }
-function how_get_data_url_host_name( $url ) {
+function data_get_url_host_name( $url ) {
   $host = parse_url($url)['host'];
   if ( array_key_exists('path', parse_url($url)) )
     $path = parse_url($url)['path'];
