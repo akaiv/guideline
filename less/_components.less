@@ -1,13 +1,19 @@
-@box-padding:         (30px - 1px);
-@box-padding-desktop: (40px - 1px);
+@box-padding:           (30px - 1px);
+@box-padding-desktop:   (40px - 1px);
+@box-max-width:         (@image-width + 2 * (@box-padding         + 1px));
+@box-max-width-desktop: (@image-width + 2 * (@box-padding-desktop + 1px));
 
 // 상자와 자료
 .box,
 .data {
 	//== 크기
-	width: 50%;
-	.row & {
-		width: 100%;
+	max-width: @box-max-width;
+	@media (min-width: @grid-float-breakpoint) {
+		max-width: @box-max-width-desktop;
+		width: 50%;
+		.row & {
+			width: 100%;
+		}
 	}
 
 	//== 여백
@@ -100,6 +106,7 @@
 	//== 썸네일
 	.pull-left {
 		margin-right: 15px;
+		margin-bottom: 40px;
 	}
 
 	//== 다른 작업들
