@@ -21,3 +21,13 @@ function akaiv_scripts() {
   wp_enqueue_script( 'project-script',   get_template_directory_uri() . $assets['js'], array( 'jquery' ), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'akaiv_scripts' );
+
+/* 관리자: 스타일시트 */
+function akaiv_admin_scripts() {
+  if (WP_ENV === 'development') :
+    wp_enqueue_style( 'project-admin-style', get_template_directory_uri() . '/css/admin.css' );
+  else :
+    wp_enqueue_style( 'project-admin-style', get_template_directory_uri() . '/css/admin.min.css' );
+  endif;
+}
+add_action( 'admin_enqueue_scripts', 'akaiv_admin_scripts' );

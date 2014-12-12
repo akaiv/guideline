@@ -12,6 +12,9 @@ module.exports = function (grunt) {
         '<%= less.core.dest %>',
         '<%= less.core.options.sourceMapFilename %>',
         '<%= cssmin.core.dest %>',
+        '<%= less.admin.dest %>',
+        '<%= less.admin.options.sourceMapFilename %>',
+        '<%= cssmin.admin.dest %>',
         '<%= concat.core.dest %>',
         '<%= uglify.core.dest %>',
       ]
@@ -60,6 +63,17 @@ module.exports = function (grunt) {
         },
         src: 'less/style.less',
         dest: 'css/style.css'
+      },
+      admin: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          sourceMapURL: 'admin.css.map',
+          sourceMapFilename: 'css/admin.css.map',
+          sourceMapRootpath: '..',
+        },
+        src: 'less/admin.less',
+        dest: 'css/admin.css'
       }
     },
 
@@ -80,7 +94,7 @@ module.exports = function (grunt) {
         options: {
           map: true
         },
-        src: '<%= less.core.dest %>'
+        src: [ '<%= less.core.dest %>', '<%= less.admin.dest %>' ]
       },
     },
 
@@ -100,7 +114,7 @@ module.exports = function (grunt) {
       options: {
         csslintrc: 'less/.csslintrc'
       },
-      dist: '<%= less.core.dest %>'
+      dist: [ '<%= less.core.dest %>', '<%= less.admin.dest %>' ]
     },
 
     cssmin: {
@@ -112,6 +126,10 @@ module.exports = function (grunt) {
       core: {
         src: '<%= less.core.dest %>',
         dest: 'css/style.min.css'
+      },
+      admin: {
+        src: '<%= less.admin.dest %>',
+        dest: 'css/admin.min.css'
       }
     },
 
