@@ -1,8 +1,14 @@
 <?php
 /* 본문 폭 */
-$content_width = 1140;
+$content_width = 960;
 
 /* 테마 설정 */
+update_option( 'medium_size_w', 480 );
+update_option( 'medium_size_h',   0 );
+update_option( 'medium_crop', false );
+update_option( 'large_size_w',  960 );
+update_option( 'large_size_h',    0 );
+update_option( 'large_crop',  false );
 function akaiv_setup_theme() {
   register_nav_menu( 'gnb', '주 메뉴' );
   // add_image_size( 'name-1x', $width, $height, $crop );
