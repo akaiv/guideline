@@ -1,23 +1,13 @@
 @box-padding: 30px;
 @box-padding-desktop: 40px;
 
-// 상자
-.box {
-	//== 기본 모양
-	.border(@line);
-	background-color: @white;
-	display: block;
-	a& {
-		.transition(all .2s ease);
-		&:hover {
-			border-color: @link;
-		}
-	}
-
-	// 크기
-	max-width: @content-width;
+// 상자와 자료
+.box,
+.data {
+	//== 크기
+	width: 50%;
 	.row & {
-		max-width: 100%;
+		width: 100%;
 	}
 
 	//== 여백
@@ -27,13 +17,30 @@
 	@media (min-width: @grid-float-breakpoint) {
 		padding: @box-padding-desktop;
 	}
-	.home &,
-	.archive & { padding: 20px; }
 
 	//== ul, ol
 	ul, ol {
 		padding: 0;
 	}
+}
+
+// 상자
+.box {
+	//== 기본 모양
+	.border(@line);
+	background-color: @white;
+	//== 클릭 가능한 상자
+	a& {
+		display: block;
+		.transition(all .2s ease);
+		&:hover {
+			border-color: @link;
+		}
+	}
+
+	//== 목록에서의 여백
+	.home &,
+	.archive & { padding: 20px; }
 }
 
 // 자료
@@ -42,17 +49,8 @@
 
 	//== 여백
 	padding: @box-padding 15px;
-	ul, ol { padding: 0 }
 	@media (min-width: @grid-float-breakpoint) {
 		padding: @box-padding-desktop 15px;
-	}
-
-	//== 위치와 크기
-	margin-left: auto;
-	margin-right: auto;
-	max-width: @content-width;
-	.row & {
-		max-width: 100%;
 	}
 
 	//== 카테고리 제목
