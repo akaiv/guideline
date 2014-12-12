@@ -10,9 +10,9 @@
     </a>
   </h1>
 
-  <div class="stage-content">
+  <section class="stage-content">
     <?php get_template_part( 'templates/loop', 'stage' ); /* 스테이지: 하위 가이드라인 */ ?>
-  </div>
+  </section>
 
 <?php else : ?>
 
@@ -27,22 +27,22 @@
   </header>
 
   <?php if ( $top_level ): ?>
-    <div class="entry-content">
+    <section class="entry-content">
       <?php get_template_part( 'templates/loop', 'stage' ); /* 스테이지: 하위 가이드라인 */ ?>
-    </div>
+    </section>
 
   <?php else : ?>
     <div class="box">
-      <div class="entry-content">
+      <section class="entry-content">
         <?php the_content(); ?>
-      </div>
+      </section>
     </div>
 
-    <div class="entry-footer">
-      <div class="data">
+    <footer class="entry-footer">
+      <aside class="data">
         <?php get_template_part( 'templates/loop', 'data' ); ?>
-      </div>
-    </div>
+      </aside>
+    </footer>
 
   <?php endif; ?>
 

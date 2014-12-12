@@ -17,19 +17,19 @@
 
     <div class="col-md-6">
       <div class="box">
-        <div class="stage-content">
+        <section class="stage-content">
           <?php the_content(); ?>
-        </div>
+        </section>
         <?php akaiv_edit_post_link( true ); ?>
       </div>
     </div>
 
     <div class="col-md-3">
-      <div class="entry-footer">
-        <div class="data">
+      <footer class="entry-footer">
+        <aside class="data">
           <?php get_template_part( 'templates/loop', 'data' ); ?>
-        </div>
-      </div>
+        </aside>
+      </footer>
     </div>
   </div><!-- .row -->
 

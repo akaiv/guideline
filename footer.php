@@ -11,7 +11,7 @@
     </nav>
     <div class="site-info">
       <p class="pull-left">
-        <a data-toggle="tooltip" data-placement="top" title="아카이브" href="http://akaiv.com/" target="_blank">아카이브</a>
+        <a href="http://akaiv.com/" target="_blank">아카이브</a>
         &copy; <?php echo date( 'Y', current_time( 'timestamp' ) ); ?>
       </p>
       <p class="pull-right">
