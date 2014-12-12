@@ -6,11 +6,12 @@
     <nav class="nav-footer">
       <ul class="list-inline">
         <li><a href="<?php echo home_url( 'about' ); ?>">소개</a></li>
+        <li><a href="<?php echo home_url( 'feedback' ); ?>">피드백</a></li>
       </ul>
     </nav>
     <div class="site-info">
       <p class="pull-left">
-        <a data-toggle="tooltip" data-placement="top" title="아카이브" href="http://akaiv.com/" target="_blank">akaiv</a>
+        <a data-toggle="tooltip" data-placement="top" title="아카이브" href="http://akaiv.com/" target="_blank">아카이브</a>
         &copy; <?php echo date( 'Y', current_time( 'timestamp' ) ); ?>
       </p>
       <p class="pull-right">
