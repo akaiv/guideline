@@ -63,10 +63,12 @@ function akaiv_head() {
     <?php if ( is_single() ) : ?>
       <meta name="description" content="<?php akaiv_meta( 'description' ); ?>">
       <meta property="og:description" content="<?php akaiv_meta( 'description' ); ?>">
-      <meta property="article:section" content="<?php akaiv_meta( 'section' ); ?>">
-      <?php foreach ( akaiv_meta( 'tags' ) as $tag ) : ?>
-        <meta property="article:tag" content="<?php echo $tag->name; ?>">
-      <?php endforeach; ?>
+      <?php if ( ! is_singular( array('guideline', 'data') ) ) : ?>
+        <meta property="article:section" content="<?php akaiv_meta( 'section' ); ?>">
+        <?php foreach ( akaiv_meta( 'tags' ) as $tag ) : ?>
+          <meta property="article:tag" content="<?php echo $tag->name; ?>">
+        <?php endforeach; ?>
+      <?php endif; ?>
     <?php endif; ?>
     <meta property="article:published_time" content="<?php akaiv_meta( 'time' ); ?>">
     <meta property="article:author" content="<?php akaiv_meta( 'author' ); ?>">
