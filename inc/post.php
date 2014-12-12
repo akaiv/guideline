@@ -17,7 +17,7 @@ function akaiv_after_post() { ?>
 function akaiv_the_title() {
   $title = trim(get_the_title());
   if ( ! $title ) $title = '(제목이 없는 글)';
-  if ( current_user_can( 'publish' ) ) :
+  if ( current_user_can( 'edit_posts' ) ) :
     global $post;
     if ( is_post_type_hierarchical( $post->post_type ) ) :
       $title = '<code>' . $post->menu_order . '</code> ' . $title;
