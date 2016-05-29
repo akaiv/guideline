@@ -1,3 +1,14 @@
-.site-header {
-	// header stylesheet
+.navbar-inverse {
+	.navbar-toggle:hover .icon-bar {
+		background-color: @navbar-inverse-link-color;
+	}
+	.navbar-nav > .current_page_item > a,
+	.navbar-nav > .current_page_parent > a {
+		&,
+		&:hover,
+		&:focus {
+			color: @navbar-inverse-link-active-color;
+			background-color: @navbar-inverse-link-active-bg;
+		}
+	}
 }

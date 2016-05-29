@@ -20,7 +20,7 @@
         <section class="stage-content">
           <?php the_content(); ?>
         </section>
-        <?php akaiv_edit_post_link( true ); ?>
+        <?php akaiv_edit_post_link( 'right' ); ?>
       </div>
     </div>
 

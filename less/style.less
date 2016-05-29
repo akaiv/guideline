@@ -1,26 +1,21 @@
 @charset "utf-8";
-@style-path: "../style";
+@assets-path: "../assets";
 
-// 프레임워크
-@import "__bootstrap";
-@import "__customize";
-@import "__wordpress";
+// 라이브러리
+@import "_bootstrap";
+@import "_fontawesome";
+@import "_akaiv";
+@import "_wordpress";
 
-// 기본
-@import "@{style-path}/akaiv/akaiv";
-@import "__fonts";
-@import "__theme";
-@import "__variables";
-//@import "__mixins";
+// 변수
+@import "_variables";
 
-// 요소
+// 컴포넌트
 @import "_components";
 @import "_headings";
 
 // 레이아웃
 @import "basic";
 @import "basic-header";
-@import "content-archives";
-@import "content-entry";
+@import "basic-footer";
 @import "content-guideline";
-@import "page-front";

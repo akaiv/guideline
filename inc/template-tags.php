@@ -1,17 +1,19 @@
 <?php
 /* 본문 영역 시작 */
-function akaiv_before_content() {
+function akaiv_before_main() {
   // get_sidebar(); ?>
-  <div id="content" class="site-content" role="main"><?php
+  <main id="main" class="site-main" role="main">
+    <div class="container"><?php
 }
 
 /* 본문 영역 끝 */
-function akaiv_after_content() { ?>
-  </div><!-- #content --><?php
+function akaiv_after_main() { ?>
+    </div>
+  </main><?php
 }
 
 /* 페이지 헤더 */
-function akaiv_page_header($heading = null) { ?>
+function akaiv_page_header( $heading = null ) { ?>
   <header class="page-header">
     <h1 class="page-title"><?php
       if ( $heading ) :
@@ -97,7 +99,7 @@ function akaiv_paginate_links() {
       'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
       'current' => max( 1, get_query_var('paged') ),
       'total' => $wp_query->max_num_pages,
-      'after_page_number' => '<span class="screen-reader-text">번째 페이지</span>',
+      'after_page_number' => '<span class="sr-only">번째 페이지</span>',
       'prev_next' => False,
       'type' => 'array'
     );

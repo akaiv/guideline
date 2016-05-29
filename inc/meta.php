@@ -40,7 +40,7 @@ function akaiv_meta($meta = null) {
     echo get_the_author_meta( 'display_name', $author_id );
 
   elseif ( $meta == 'image' ) :
-    $fb_image = get_template_directory_uri().'/screenshot.png';
+    $fb_image = get_template_directory_uri().'/images/fb-image.png';
     if ( is_singular() ) :
       $thumbnail_src = akaiv_get_post_thumbnail_src();
       $image         = ( $thumbnail_src ) ? $thumbnail_src : $fb_image;
@@ -94,6 +94,8 @@ function akaiv_get_archive_url() {
     $canonical = get_term_link( get_query_var( 'post_format' ), 'post_format' );
   elseif ( is_post_type_archive() ) :
     $canonical = get_post_type_archive_link( get_query_var( 'post_type' ) );
+  elseif ( is_tax() ) :
+    $canonical = get_term_link( get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
   else :
     $canonical = '';
   endif;

@@ -1,0 +1,23 @@
+// 스크린리더 텍스트
+.screen-reader-text {
+	&:extend(.sr-only);
+}
+
+// 검색 폼
+.search-form {
+	label { display: block }
+	.search-field  { .form-control }
+	.search-submit { .sr-only }
+}
+
+// 패스워드 입력 폼
+.post-password-form {
+	[type="password"] { .form-control }
+	[type="submit"]   { .sr-only }
+}
+
+// 제목
+.page-title,
+.entry-title {
+	.hyphens();
+}

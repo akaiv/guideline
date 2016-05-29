@@ -5,10 +5,10 @@
 <div class="box">
   <?php akaiv_post_thumbnail(); ?>
 
-  <div class="page-content">
+  <section class="page-content">
     <?php the_content(); ?>
-  </div>
-  <?php akaiv_edit_post_link( true ); ?>
+  </section>
+  <?php akaiv_edit_post_link( 'right' ); ?>
 </div>
 
 <?php akaiv_after_post(); ?>

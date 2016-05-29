@@ -1,0 +1,28 @@
+// 기본 색상
+@brand:                  @blue;
+@link:                   @brand;
+@link-hover:             darken(@link, 10%);
+@text:                   @gray-dark;
+@text-light:             @gray-light;
+@line:                   @table-border-color;
+@line-light:             lighten(@line, 6%);
+@line-dark:              darken(@line, 6%);
+.brand                   { color: @brand }
+.bg-brand                { background-color: @brand }
+.text-light              { color: @text-light }
+
+// 레이아웃
+@grid-gutter-width:      20px;
+@grid-float-breakpoint:  @screen-md-min;
+@body-bg:                @gray-97;
+@content-width:          640px;
+@footer-height:          100px;
+@footer-margin:          100px;
+@image-width:            480px;
+@navbar-inverse-toggle-hover-bg:            @navbar-inverse-bg;
+@navbar-inverse-toggle-icon-bar-bg:         @navbar-inverse-link-color;
+
+// 제목
+@font-size-h1:           14px;
+@font-size-h2:           13px;
+@font-size-h3:           12px;

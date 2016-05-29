@@ -2,32 +2,35 @@
 /* 스타일시트 및 자바스크립트 */
 if ( ! defined( 'WP_ENV' ) ) define( 'WP_ENV', 'production' );
 function akaiv_scripts() {
+  $get_pkg = file_get_contents(get_template_directory() . '/package.json');
+  $pkg     = json_decode($get_pkg, true);
   if (WP_ENV === 'development') :
     $assets = array(
-      'css'       => '/css/style.css',
-      'js'        => '/js/script.js',
-      'modernizr' => '/assets/modernizr/modernizr.js'
+      'js'        => '/scripts/'     . $pkg['name'] . '.js',
+      'css'       => '/stylesheets/' . $pkg['name'] . '.css',
     );
   else :
+    $get_versionsMapJS  = file_get_contents(get_template_directory() . '/scripts/versionsMapJS.json');
+    $get_versionsMapCSS = file_get_contents(get_template_directory() . '/stylesheets/versionsMapCSS.json');
+    $version_js         = json_decode($get_versionsMapJS, true)[0]['version'];
+    $version_css        = json_decode($get_versionsMapCSS, true)[0]['version'];
     $assets     = array(
-      'css'       => '/css/style.min.css',
-      'js'        => '/js/script.min.js',
-      'modernizr' => '/js/modernizr.min.js'
+      'js'        => '/scripts/'     . $pkg['name'] . '.min.' . $version_js  . '.js',
+      'css'       => '/stylesheets/' . $pkg['name'] . '.min.' . $version_css . '.css',
     );
   endif;
-  wp_enqueue_style(  'project-style',    get_template_directory_uri() . $assets['css']);
-  wp_enqueue_script( 'modernizr',        get_template_directory_uri() . $assets['modernizr'], array(), null, true);
   // if( is_archive() ) { wp_enqueue_script( 'jquery-masonry' ); }
-  wp_enqueue_script( 'project-script',   get_template_directory_uri() . $assets['js'], array( 'jquery' ), null, true );
+  wp_enqueue_style(  'project-style',    get_template_directory_uri() . $assets['css'], $deps = null, $ver = null );
+  wp_enqueue_script( 'project-script',   get_template_directory_uri() . $assets['js'], array( 'jquery' ), $ver = null, $in_footer = true );
 }
 add_action( 'wp_enqueue_scripts', 'akaiv_scripts' );
 
 /* 관리자: 스타일시트 */
 function akaiv_admin_scripts() {
   if (WP_ENV === 'development') :
-    wp_enqueue_style( 'project-admin-style', get_template_directory_uri() . '/css/admin.css' );
+    wp_enqueue_style( 'project-admin-style', get_template_directory_uri() . '/stylesheets/admin.css' );
   else :
-    wp_enqueue_style( 'project-admin-style', get_template_directory_uri() . '/css/admin.min.css' );
+    wp_enqueue_style( 'project-admin-style', get_template_directory_uri() . '/stylesheets/admin.min.css' );
   endif;
 }
 add_action( 'admin_enqueue_scripts', 'akaiv_admin_scripts' );

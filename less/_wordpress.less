@@ -1,0 +1,27 @@
+@wordpress-path: "wordpress";
+
+// 레이아웃
+@import "@{wordpress-path}/layout";
+@import "@{wordpress-path}/align";
+
+// 컴포넌트
+@import "@{wordpress-path}/variables";
+@import "@{wordpress-path}/components";
+@import "@{wordpress-path}/image";
+@import "@{wordpress-path}/gallery";
+@import "@{wordpress-path}/pagination";
+
+// 글
+@import "@{wordpress-path}/entry";
+@import "@{wordpress-path}/entry-meta";
+
+// 스타일
+@font-size-entry: 13;
+.wp-caption a {
+	.link(@text-light);
+	text-decoration: underline;
+}
+.entry-meta > span {
+	margin-left: 10px;
+	margin-right: 0;
+}

@@ -22,7 +22,7 @@
     </h1>
     <div class="entry-meta text-right">
       <?php akaiv_entry_meta( 'date' ); ?>
-      <?php akaiv_edit_post_link( false, 'fa-pencil' ); ?>
+      <?php akaiv_edit_post_link( 'left', 'fa-pencil' ); ?>
     </div>
   </header>
 

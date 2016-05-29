@@ -3,7 +3,7 @@
 <?php akaiv_page_header( '찾을 수 없습니다.' ); ?>
 
 <div class="box">
-  <div class="page-content">
+  <section class="page-content">
     <p><?php
       if ( is_404() ) :
         echo '검색을 해보시겠습니까?';
@@ -14,7 +14,7 @@
       endif; ?>
     </p>
     <?php get_search_form(); ?>
-  </div>
+  </section>
 </div>
 
 <?php akaiv_after_post(); ?>
