@@ -31,7 +31,7 @@ function akaiv_get_title() {
 
 /* 썸네일 */
 function akaiv_post_thumbnail() {
-  if ( post_password_required() && ! is_singular() ) : /* 비밀 글 */ ?>
+  if ( post_password_required() ) : /* 비밀 글 */ ?>
     <a class="post-thumbnail" href="<?php the_permalink(); ?>">
       <?php akaiv_the_post_thumbnail_placeholder( 'thumbnail', 'thumbnail-lock' ); ?>
     </a><?php
@@ -48,7 +48,7 @@ function akaiv_post_thumbnail() {
   else : /* 보관함 */ ?>
     <a class="post-thumbnail" href="<?php the_permalink(); ?>"><?php
       if ( has_post_thumbnail() ) :
-        the_post_thumbnail( 'thumbnail' );
+        the_post_thumbnail( 'thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) );
       else :
         akaiv_the_post_thumbnail_placeholder( 'thumbnail' );
       endif; ?>
